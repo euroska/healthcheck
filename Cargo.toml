@@ -1,0 +1,18 @@
+[package]
+name = "healthcheck"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+hyper = { version = "0.14", features = ["full"] }
+hyper-rustls = { verision = "0.23" }
+tokio = { version = "1.21", features = ["full"] }
+tracing-subscriber = "0.3.9"
+tracing = "0.1.31"
+futures = "0.3.24"
+teloxide = { version = "0.10.1", default-features = false, features = ["rustls"] }
+toml = "0.5.9"
+serde = { version = "1.0", features = ["derive"] }
+lifetime = "0.1.0"
