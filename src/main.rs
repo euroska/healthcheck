@@ -61,7 +61,7 @@ async fn main() -> Result<(), Box<dyn Error + Send + Sync>> {
 
         handles.push(tokio::spawn(async move {
             check(
-                string_to_static_str(u.to_string()),
+                u.as_ref(),
                 bot.clone(),
                 config.clone(),
                 client.clone(),
@@ -145,8 +145,4 @@ async fn check<'a>(
     }
 
     Ok(())
-}
-
-fn string_to_static_str(s: String) -> &'static str {
-    Box::leak(s.into_boxed_str())
 }
