@@ -52,9 +52,9 @@ async fn main() -> Result<(), Box<dyn Error + Send + Sync>> {
     let client = Client::builder().build::<_, hyper::Body>(https);
 
     let mut handles = vec![];
-    let address = config.addresses.clone();
+    //let address = config.addresses.clone();
 
-    for u in address {
+    for u in &config.addresses {
         let bot = bot.clone();
         let client = client.clone();
         let config = config.clone();
